@@ -7,9 +7,15 @@
 # Virtual environment
 venv/
 
+# temp
+temp/*
+!temp/.keep
+
 # Images
 data/
-predictions/
+predictions/*
+!predictions/.keep
+
 cont_predictions/
 images/tmp/
 images/*.jpg
@@ -18,5 +24,7 @@ images/*.jpg
 onnx-tensorrt/
 
 # Trained models
-selected_models/
+selected_models/*
+!selected_models/.keep
+
 cpmodels/models/

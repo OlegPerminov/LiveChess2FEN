@@ -41,3 +41,5 @@ RUN cd /opencv_build/opencv/build && cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D OPENCV_EXTRA_MODULES_PATH=/opencv_build/opencv_contrib/modules .. && \
     make -j8 && \
     make install
+
+RUN apt-get install -y curl

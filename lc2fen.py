@@ -9,7 +9,7 @@ from lc2fen.predict_board import predict_board_keras, predict_board_onnx, \
     predict_board_trt
 
 ACTIVATE_KERAS = True
-MODEL_PATH_KERAS = "selected_models/Xception_last.h5"
+MODEL_PATH_KERAS = "selected_models/model.h5"
 IMG_SIZE_KERAS = 299
 PRE_INPUT_KERAS = prein_squeezenet
 

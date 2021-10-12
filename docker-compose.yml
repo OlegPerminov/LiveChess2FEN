@@ -4,6 +4,8 @@ services:
     build: .
     volumes:
         - .:/src
-    entrypoint: /bin/sh
-    stdin_open: true
-    tty: true
+    command: bash
+
+volumes:
+  preditions:
+  models:

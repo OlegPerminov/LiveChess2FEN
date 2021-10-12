@@ -33,7 +33,7 @@ from lc2fen.test_predict_board import predict_board, print_fen_comparison
 #   from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as
 #       prein_mobilenet
 ACTIVATE_KERAS = True
-MODEL_PATH_KERAS = "./selected_models/Xception_last.h5"
+MODEL_PATH_KERAS = "/src/selected_models/model.h5"
 IMG_SIZE_KERAS = 299
 PRE_INPUT_KERAS = prein_xception
 
