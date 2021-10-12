@@ -1,0 +1,9 @@
+version: "2"
+services:
+  python:
+    build: .
+    volumes:
+        - .:/src
+    entrypoint: /bin/sh
+    stdin_open: true
+    tty: true

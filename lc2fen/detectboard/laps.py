@@ -12,8 +12,7 @@ from scipy.spatial.distance import pdist
 from lc2fen.detectboard import debug, image_object
 from lc2fen.detectboard import poly_point_isect
 
-__LAPS_SESS = onnxruntime.InferenceSession(
-    "lc2fen/detectboard/models/laps_model.onnx")
+__LAPS_SESS = onnxruntime.InferenceSession("lc2fen/detectboard/models/laps_model.onnx")
 
 __ANALYSIS_RADIUS = 10
 

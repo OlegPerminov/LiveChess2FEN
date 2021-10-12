@@ -11,6 +11,11 @@ venv/
 data/
 predictions/
 cont_predictions/
+images/tmp/
+images/*.jpg
+
+# tensorrt
+onnx-tensorrt/
 
 # Trained models
 selected_models/

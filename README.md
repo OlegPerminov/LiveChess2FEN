@@ -4,7 +4,7 @@ LiveChess2FEN is a fully functional framework that automatically digitizes
 the configuration of a chessboard. It is optimized for execution on a
 Nvidia Jetson Nano.
 
-This repository contains the code used in our [paper](https://arxiv.org/abs/2012.06858). If you find this useful, please consider citing us. 
+This repository contains the code used in our [paper](https://arxiv.org/abs/2012.06858). If you find this useful, please consider citing us.
 
 ![](docs/complete_method.png)
 
@@ -42,13 +42,13 @@ Instructions for the JetPack 4.6. If you run into any problems see the Troublesh
         sudo pip3 install -U numpy==1.19.4 future==0.18.2 mock==3.0.5 h5py==2.10.0 keras_preprocessing==1.1.1 keras_applications==1.0.8 gast==0.2.2 futures protobuf pybind11
         sudo pip3 install --pre --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v46 tensorflow
         ~~~
-        
+
     2. Keras
         ~~~
         sudo apt-get install -y build-essential libatlas-base-dev gfortran
         sudo pip install keras
         ~~~
-        
+
     3. ONNX Runtime
         Download the .whl file from [here](https://nvidia.box.com/s/bfs688apyvor4eo8sf3y1oqtnarwafww) and run:
         ~~~
@@ -130,7 +130,7 @@ Note: You can find a list of version numbers for the python packages that have b
 
 3. Create a `selected_models` and a `predictions` folder in the project root.
 
-4. Download the prediction models from the 
+4. Download the prediction models from the
  [releases](https://github.com/davidmallasen/LiveChess2FEN/releases)
  and save them to the `selected_models` folder.
 
@@ -144,9 +144,18 @@ Note: You can find a list of version numbers for the python packages that have b
 
 7. Run the `test_lc2fen.py` script.
 
+## Run script
+Run bash in container
+`docker-compose run python`
+Copy `*jpg` images to some new dir.
+
+For keras interface run with option `-k`
+Other options is images path and a1 position (B = bottom, T = top, R = right, L = left, one of BL, BR, TL, TR)
+`python3 lc2fen.py -k /src/images/ BL`
+
 ## Contributing
 
-Contributions are very welcome! Please check the 
+Contributions are very welcome! Please check the
 [CONTRIBUTING](CONTRIBUTING.md) file for more information on how to
  contribute to LiveChess2FEN.
 

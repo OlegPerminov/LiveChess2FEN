@@ -8,9 +8,9 @@ from keras.applications.mobilenet_v2 import preprocess_input as prein_mobilenet
 from lc2fen.predict_board import predict_board_keras, predict_board_onnx, \
     predict_board_trt
 
-ACTIVATE_KERAS = False
-MODEL_PATH_KERAS = "selected_models/SqueezeNet1p1.h5"
-IMG_SIZE_KERAS = 227
+ACTIVATE_KERAS = True
+MODEL_PATH_KERAS = "selected_models/Xception_last.h5"
+IMG_SIZE_KERAS = 299
 PRE_INPUT_KERAS = prein_squeezenet
 
 ACTIVATE_ONNX = False

@@ -324,6 +324,8 @@ def continuous_predictions(path, a1_pos, obtain_pieces_probs):
     processed_board = False
     while True:
         for board_path in sorted(glob.glob(path + '*.jpg'), key=natural_key):
+            print(board_path)
+            print(a1_pos)
             fen, board_corners = predict_board(board_path, a1_pos,
                                                obtain_pieces_probs,
                                                board_corners,

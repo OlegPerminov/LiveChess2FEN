@@ -6,6 +6,7 @@ import os
 import numpy as np
 import onnxruntime
 import sklearn
+
 from tensorflow.keras.applications.imagenet_utils import preprocess_input as \
         prein_squeezenet
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as \
@@ -31,8 +32,8 @@ from lc2fen.test_predict_board import predict_board, print_fen_comparison
 # PRE_INPUT example:
 #   from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as
 #       prein_mobilenet
-ACTIVATE_KERAS = False
-MODEL_PATH_KERAS = "selected_models/Xception_last.h5"
+ACTIVATE_KERAS = True
+MODEL_PATH_KERAS = "./selected_models/Xception_last.h5"
 IMG_SIZE_KERAS = 299
 PRE_INPUT_KERAS = prein_xception
 
