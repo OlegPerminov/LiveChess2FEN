@@ -3,10 +3,11 @@ Common functions to train the chess piece models.
 """
 import matplotlib
 
-from keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
-from keras.layers import Dense, GlobalAveragePooling2D
-from keras.models import Model
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow import keras
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
+from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
+from tensorflow.keras.models import Model
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 matplotlib.use('agg')
 import matplotlib.pyplot as plt

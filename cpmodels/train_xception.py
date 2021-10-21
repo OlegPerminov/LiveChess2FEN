@@ -1,9 +1,10 @@
 """
 Train Xception model.
 """
-from keras.applications import Xception
-from keras.applications.xception import preprocess_input
-from keras.engine.saving import load_model
+from tensorflow import keras
+from tensorflow.keras.applications import Xception
+from tensorflow.keras.applications.xception import preprocess_input
+from tensorflow.keras.models import load_model
 
 from chess_piece_models_common import build_model, data_generators, \
     train_model, plot_model_history, evaluate_model, model_callbacks
@@ -80,5 +81,5 @@ def continue_training():
 
 
 if __name__ == "__main__":
-    train_chesspiece_model()
+    #train_chesspiece_model()
     continue_training()
