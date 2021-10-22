@@ -10,9 +10,13 @@ from chess_piece_models_common import build_model, data_generators, \
     train_model, plot_model_history, evaluate_model, model_callbacks
 
 
+BATCH_SIZE = 2
+IMAGE_SIZE = 299
+WORKERS = 2
+
 def train_chesspiece_model():
     """Trains the chesspiece model based on Xception."""
-    base_model = Xception(input_shape=(299, 299, 3), include_top=False,
+    base_model = Xception(input_shape=(IMAGE_SIZE, IMAGE_SIZE, 3), include_top=False,
                           weights='imagenet')
 
     # First train only the top layers
@@ -22,12 +26,12 @@ def train_chesspiece_model():
     model = build_model(base_model)
 
     train_generator, validation_generator = data_generators(
-        preprocess_input, (299, 299), 64)
+        preprocess_input, (IMAGE_SIZE, IMAGE_SIZE), BATCH_SIZE)
 
     callbacks = model_callbacks(5, "./models/Xception_pre.h5", 0.1, 10)
 
     history = train_model(model, 20, train_generator, validation_generator,
-                          callbacks, use_weights=False, workers=5)
+                          callbacks, use_weights=False, workers=WORKERS)
 
     plot_model_history(history, "./models/Xception_pre_acc.png",
                        "./models/Xception_pre_loss.png")
@@ -59,7 +63,7 @@ def continue_training():
     model = load_model("./models/Xception.h5")
 
     train_generator, validation_generator = data_generators(
-        preprocess_input, (299, 299), 64)
+        preprocess_input, (IMAGE_SIZE, IMAGE_SIZE), BATCH_SIZE)
 
     # Train all layers
     for layer in model.layers:
@@ -71,7 +75,7 @@ def continue_training():
     callbacks = model_callbacks(20, "./models/Xception_all.h5", 0.2, 8)
 
     history = train_model(model, 100, train_generator, validation_generator,
-                          callbacks, use_weights=False, workers=5)
+                          callbacks, use_weights=False, workers=WORKERS)
 
     plot_model_history(history, "./models/Xception_all_acc.png",
                        "./models/Xception_all_loss.png")

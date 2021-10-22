@@ -37,8 +37,8 @@ def build_model(base_model):
 
 
 def data_generators(preprocessing_function, target_size, batch_size,
-                    train_path='../data/train/',
-                    validation_path='../data/validation/'):
+                    train_path='./data/train/',
+                    validation_path='./data/validation/'):
     """
     Returns the train and validation generators.
 

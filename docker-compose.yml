@@ -1,10 +1,16 @@
-version: "2"
+version: '3'
 services:
   python:
     build: .
     volumes:
-        - .:/src
+      - .:/src
     command: bash
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
 
 volumes:
   preditions:
